@@ -1,17 +1,19 @@
 import React, { useState } from "react";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const RecipesCard = ({ recipe }) => {
   const { r_img, name, cooking_method, ingredients, ratting } = recipe;
 
-  const [buttonDe, setButtonDE] = useState(true)
+  const [buttonDe, setButtonDE] = useState(true);
 
   const favorite = () => {
     toast.success("Add in Favorite successfully", {
       position: "top-center",
     });
-    setButtonDE(false)
+    setButtonDE(false);
   };
 
   return (
@@ -42,14 +44,22 @@ const RecipesCard = ({ recipe }) => {
           </p>
         </div>
         <div className="justify-end p-4">
-          <button
-            onClick={favorite}
-            disabled={!buttonDe}
-            className="my-btn"
-          >
-            Add in Favorite
-          </button>
-          <ToastContainer />
+          <div className="flex justify-between items-center">
+            <div>
+              <button
+                onClick={favorite}
+                disabled={!buttonDe}
+                className="my-btn"
+              >
+                Add in Favorite
+              </button>
+              <ToastContainer />
+            </div>
+            <div className="flex items-center gap-2">
+              <p>Rating: {ratting}</p>
+              <Rating style={{ maxWidth: 100 }} value={ratting} readOnly />
+            </div>
+          </div>
         </div>
       </div>
     </div>
