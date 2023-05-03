@@ -17,3 +17,7 @@
 .style-none{
   list-style: number;
 }
+
+.my-input{
+  @apply bg-blue-50 border border-gray-500 text-gray-900 rounded-lg w-full p-2.5
+}

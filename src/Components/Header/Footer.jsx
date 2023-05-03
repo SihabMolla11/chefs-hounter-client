@@ -15,10 +15,7 @@ const Footer = () => {
         <div>
           <h3 className="text-2xl font-bold mb-4">Website Creator Detail </h3>
           <small>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae unde
-            facere dolorum aut quas dolor adipisci ipsam recusandae excepturi
-            quidem, officia harum, eaque vero sapiente natus vel culpa ratione
-            veniam maxime impedit corrupti tenetur blanditiis nostrum sit.
+            Hello every one. this is Sihab Uddin Molla. I am from Dhaka, Bangladesh, Gopalganj. My age is 18. I reding degree first year in Government Bangabandhu College, Gopalganj. Now I am learning Web development from Programing hero with jJhankar Mahbub vaiy. After some days I will be a junior developer. My dream is to become a skilled programmer.
           </small>
         </div>
         <div className="flex flex-col md:flex-row gap-16 justify-between">
