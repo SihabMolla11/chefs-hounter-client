@@ -22,7 +22,7 @@ const Banner = () => {
       </div>
       <div className="md:w-[60%]">
         <img
-          className="rounded-br-lg rounded-tr-lg"
+          className=" rounded-r-lg rounded-tr-lg"
           src={bannerImg}
           alt="bannerImg"
         />

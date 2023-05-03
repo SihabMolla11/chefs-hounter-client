@@ -7,7 +7,7 @@ const Chef = ({ chef }) => {
 
   return (
     <div>
-      <div className="card card-compact h-full w-96 bg-[#E4F1Fe] shadow-xl">
+      <div className="card card-compact h-full bg-[#E4F1Fe] shadow-xl">
         <figure>
           <img className="h-[250px] w-full" src={img_url} alt="Shoes" />
         </figure>

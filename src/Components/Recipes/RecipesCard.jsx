@@ -28,7 +28,7 @@ const RecipesCard = ({ recipe }) => {
 
         </div>
           <div className="justify-end p-4">
-            <button className="btn btn-primary">Buy Now</button>
+            <button className="my-btn">Add in Favorite</button>
           </div>
       </div>
     </div>

@@ -7,7 +7,7 @@
 }
 
 .my-btn{
-  @apply btn text-black border-none text-blue-500 hover:text-white hover:bg-[#07549c] bg-[#b7d5f5]
+  @apply btn text-black border-none text-blue-700 hover:text-white hover:bg-[#07549c] bg-[#b7d5f5]
 }
 
 .active{

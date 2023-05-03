@@ -17,7 +17,7 @@ const Home = () => {
           <h2 className=" text-4xl font-medium">Let's meet the chefs</h2>
           <p className="mt-2">Here we will get to know some arabian chefs. They are all famous chefs in Arabic countries. Their food is world famous.</p>
         </div>
-        <div className="grid grid-cols-3 my-8 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-8 gap-6">
           {chefs.map((chef) => (
             <Chef key={chef.id} chef={chef}></Chef>
           ))}
