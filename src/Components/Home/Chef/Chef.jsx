@@ -9,7 +9,7 @@ const Chef = ({ chef }) => {
     <div>
       <div className="card card-compact h-full w-96 bg-[#E4F1Fe] shadow-xl">
         <figure>
-          <img src={img_url} alt="Shoes" />
+          <img className="h-[250px] w-full" src={img_url} alt="Shoes" />
         </figure>
         <div className="card-body">
           <h2 className="text-4xl font-semibold">{name}</h2>
@@ -24,7 +24,7 @@ const Chef = ({ chef }) => {
           </p>
           <div className="card-actions items-center justify-end">
             <p className="flex items-center gap-2 text-2xl font-bold text-blue-500">
-              {likes} <FaRegHandPointRight />
+             Likes:- {likes} <FaRegHandPointRight />
             </p>
             <Link to={`/recipes/${id}`}>
               <button className="my-btn gap-4">

@@ -1,14 +1,16 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import RBanner from './RBanner';
 
 const Recipes = () => {
 
     const recipes = useLoaderData()
-    console.log(recipes)
 
     return (
         <div>
-            this is recipes page
+            {
+                recipes.map(recipe=><RBanner key={recipe.id} recipe={recipe}></RBanner>)
+            }
         </div>
     );
 };

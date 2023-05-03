@@ -6,14 +6,14 @@ const Header = () => {
   const user = false;
 
   return (
-    <div className="my-container">
-      <div className="navbar rounded-sm">
+    <div className="bg-[#E4F1FE] mb-16 ">
+      <div className="navbar  my-container">
         <div className="flex-1">
           <Link className="normal-case text-xl">
             <img title="Ymma Aribic Foods hunter" className="w-40" src={logo} alt="" />
           </Link>
           <div className="ml-16">
-            <NavLink className="px-3 font-medium text-lg" to="#">
+            <NavLink className="px-3 font-medium text-lg" to="/">
               Home
             </NavLink>
             <NavLink className="px-3 font-medium text-lg" to="/blog">
