@@ -1,9 +1,9 @@
 import React from "react";
 import { FaRegHandPointRight, FaArrowRight } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 
 const Chef = ({ chef }) => {
-  const { img_url, name, year_of_experience, recipes_names, likes } = chef;
+  const {id, img_url, name, year_of_experience, recipes_names, likes } = chef;
 
   return (
     <div>
@@ -16,12 +16,21 @@ const Chef = ({ chef }) => {
           <p className="text-lg font-bold text-green-800">
             {year_of_experience} Year of experience
           </p>
-            <p>
-              <span className="text-2xl">Some Famous recipes:-</span> <br /> <span className="text-lg text-orange-600 uppercase">{recipes_names}</span>
-            </p>
+          <p>
+            <span className="text-2xl">Some Famous recipes:-</span> <br />{" "}
+            <span className="text-lg text-orange-600 uppercase">
+              {recipes_names}
+            </span>
+          </p>
           <div className="card-actions items-center justify-end">
-            <p className="flex items-center gap-2 text-2xl font-bold text-blue-500">{likes} <FaRegHandPointRight/></p>
-            <button className="my-btn gap-4">View Recipes <FaArrowRight/></button>
+            <p className="flex items-center gap-2 text-2xl font-bold text-blue-500">
+              {likes} <FaRegHandPointRight />
+            </p>
+            <Link to={`/recipes/${id}`}>
+              <button className="my-btn gap-4">
+                View Recipes <FaArrowRight />
+              </button>
+            </Link>
           </div>
         </div>
       </div>
