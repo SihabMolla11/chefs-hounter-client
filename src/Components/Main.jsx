@@ -6,9 +6,11 @@ import Footer from "./Header/Footer";
 const Main = () => {
   return (
     <div>
-        <Header></Header>
+      <Header></Header>
+      <div className="min-h-[calc(100vh-490px)]">
         <Outlet></Outlet>
-        <Footer></Footer>
+      </div>
+      <Footer></Footer>
     </div>
   );
 };

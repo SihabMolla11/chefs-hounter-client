@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Router/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const nevigate = useNavigate()
 
   const handelRegister = (event) => {
     event.preventDefault();
@@ -17,6 +18,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
+        nevigate("/")
       })
       .catch((error) => {
         console.log(error.message);

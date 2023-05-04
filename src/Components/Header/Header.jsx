@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 import { AuthContext } from "../Router/AuthProvider";
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   // console.log(user)
 
   const Logout = () => {
@@ -32,11 +32,12 @@ const Header = () => {
             <NavLink className="px-3 font-medium text-lg" to="/blog">
               Blog
             </NavLink>
-            {!user && (
-              <NavLink className="px-3 font-medium text-lg" to="/register">
-                Register
-              </NavLink>
-            )}
+            <NavLink className="px-3 font-medium text-lg" to="/login">
+              Login
+            </NavLink>
+            <NavLink className="px-3 font-medium text-lg" to="/register">
+              Register
+            </NavLink>
           </div>
         </div>
         <div className="mr-10">
@@ -46,7 +47,17 @@ const Header = () => {
             </button>
           ) : (
             <button className="my-btn">
-              <Link to="/login">Login</Link>
+              {loading ? (
+                <>
+                  <span
+                    className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status"
+                  ></span> 
+                  <span>Loading</span>
+                </>
+              ) : (
+                <Link to="/login">Login</Link>
+              )}
             </button>
           )}
         </div>
