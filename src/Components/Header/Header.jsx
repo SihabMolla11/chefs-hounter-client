@@ -7,7 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
   const { user, logOut, loading } = useContext(AuthContext);
-
+ console.log(user?.email)
 
 
   const Logout = () => {
