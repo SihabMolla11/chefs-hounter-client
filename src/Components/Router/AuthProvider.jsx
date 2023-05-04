@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../../Firebase/firebase";
 
@@ -40,8 +41,9 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, gitProvider);
   };
 
+
   const logOut = () => {
-    setLoading(true)
+    setLoading(true);
     return signOut(auth);
   };
 

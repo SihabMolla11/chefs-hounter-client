@@ -4,11 +4,9 @@ import logo from "../../assets/logo.png";
 import { AuthContext } from "../Router/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
 
-
 const Header = () => {
   const { user, logOut, loading } = useContext(AuthContext);
- console.log(user?.email)
-
+  console.log(user);
 
   const Logout = () => {
     logOut()
@@ -20,14 +18,17 @@ const Header = () => {
     <div className="bg-[#E4F1FE] mb-16 ">
       <div className="navbar  my-container">
         <div className="flex-1">
-          <Link className="normal-case text-xl">
+          <Link to="/" className="normal-case text-xl flex items-center gap-4">
             <img
               title="Ymma Aribic Foods hunter"
-              className="w-40"
+              className="w-20"
               src={logo}
-              alt=""
+              alt="logo"
             />
+          <h2 className=" font-medium text-3xl">Chefs Hunter</h2>
           </Link>
+        </div>
+        <div>
           <div className="ml-16">
             <NavLink className="px-3 font-medium text-lg" to="/">
               Home
@@ -49,7 +50,7 @@ const Header = () => {
               Log Out
             </button>
           ) : (
-            <button className="my-btn">
+            <Link to="/login" className="my-btn">
               {loading ? (
                 <>
                   <span
@@ -59,18 +60,22 @@ const Header = () => {
                   <span>Loading</span>
                 </>
               ) : (
-                <Link to="/login">Login</Link>
+                <p>Login</p>
               )}
-            </button>
+            </Link>
           )}
         </div>
         <div className="flex-none gap-2">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                {
-                  user ? <img src="https://scontent.fjsr12-1.fna.fbcdn.net/v/t39.30808-6/298268684_120002130779036_6961490149997549543_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHZJdhzpWE-sW6HSa7Wp3W-PlxQUTeHZ0Q-XFBRN4dnRE7AmDwsww2g2brWPqPKrrPBVCyhq6bh2d3A3ipNmuK8&_nc_ohc=uszh-0uLS8EAX__pHH_&_nc_ht=scontent.fjsr12-1.fna&oh=00_AfCbuPUQIYUdRSKt2S9YwduvHzIAoPkFC5ULmzg3N_0XDg&oe=645868C5" /> : <span className="text-[40px]"><FaUserCircle/></span>
-                }
+              <div className="w-10 rounded-full" title={`${user?.displayName}`}>
+                {user ? (
+                  <img src={user?.photoURL} />
+                ) : (
+                  <span className="text-[40px]">
+                    <FaUserCircle />
+                  </span>
+                )}
               </div>
             </label>
           </div>

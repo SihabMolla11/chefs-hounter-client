@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Router/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser} = useContext(AuthContext);
   const nevigate = useNavigate();
   const [error, setError] = useState("");
 
@@ -31,6 +31,7 @@ const Register = () => {
         console.log(error.message);
         setError(error.message);
       });
+
   };
 
   return (

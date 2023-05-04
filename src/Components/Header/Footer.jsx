@@ -7,7 +7,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className=" mt-5 bg-slate-300 p-10">
+    <div className=" bg-slate-300 p-10">
       <div className="my-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[50px] items-center">
         <div>
           <img className="max-w-[250px]" src={logo} alt="" />
