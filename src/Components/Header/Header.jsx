@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { AuthContext } from "../Router/AuthProvider";
 
 const Header = () => {
-  const user = false;
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user)
+
+  const Logout = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error.message));
+  };
 
   return (
     <div className="bg-[#E4F1FE] mb-16 ">
@@ -24,16 +32,18 @@ const Header = () => {
             <NavLink className="px-3 font-medium text-lg" to="/blog">
               Blog
             </NavLink>
-            {
-              !user && <NavLink className="px-3 font-medium text-lg" to="/register">
-              Register
-            </NavLink>
-            }
+            {!user && (
+              <NavLink className="px-3 font-medium text-lg" to="/register">
+                Register
+              </NavLink>
+            )}
           </div>
         </div>
         <div className="mr-10">
           {user ? (
-            <button className="my-btn">Log Out</button>
+            <button onClick={Logout} className="my-btn">
+              Log Out
+            </button>
           ) : (
             <button className="my-btn">
               <Link to="/login">Login</Link>

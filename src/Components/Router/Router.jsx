@@ -4,6 +4,8 @@ import Home from "../Home/Home";
 import Recipes from "../Recipes/Recipes";
 import Login from "../Forms/Login";
 import Register from "../Forms/Register";
+import Blog from "../Blog/Blog";
+import PrivateRoute from "../PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -16,18 +18,27 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/chefs"),
       },
       {
-        path:"/recipes/:id",
-        element:<Recipes></Recipes>,
-        loader:({params})=> fetch(`http://localhost:5000/recipes/${params.id}`)
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/recipes/:id",
+        element: (
+          <PrivateRoute>
+            <Recipes></Recipes>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/recipes/${params.id}`),
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
-        path:"/register",
-        element:<Register></Register>
-      }
+        path: "/register",
+        element: <Register></Register>,
+      },
     ],
   },
 ]);
