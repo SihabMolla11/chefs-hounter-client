@@ -34,7 +34,6 @@ const Blog = () => {
         Express is a minimal and flexible Node. js web application framework
         that provides a robust set of features for web and mobile applications.
       </p>
-
       <h3 className="text-2xl mt-8 font-semibold">
         4. What is a custom hook, and why will you create a custom hook?
       </h3>
