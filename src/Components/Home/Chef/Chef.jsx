@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegHandPointRight, FaArrowRight } from "react-icons/fa";
+import { FaRegThumbsUp, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Chef = ({ chef }) => {
@@ -23,8 +23,8 @@ const Chef = ({ chef }) => {
             </span>
           </p>
           <div className="card-actions items-center justify-end">
-            <p className="flex items-center gap-2 text-2xl font-bold text-blue-500">
-             Likes:- {likes} <FaRegHandPointRight />
+            <p className="flex items-center gap-4 text-2xl font-bold text-blue-500">
+               <FaRegThumbsUp /> {likes}
             </p>
             <Link to={`/recipes/${id}`}>
               <button className="my-btn gap-4">

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegHandPointRight, FaArrowRight } from "react-icons/fa";
+import { FaRegHandPointRight, FaRegThumbsUp } from "react-icons/fa";
 import RecipesCard from "./RecipesCard";
 
 const RBanner = ({ recipe }) => {
@@ -18,8 +18,8 @@ const RBanner = ({ recipe }) => {
             <p className=" text-stone-700 ml-4">{detail}</p>
           </div>
           <div className="w-[50%]">
-            <p className="flex items-center gap-2 text-2xl font-bold my-4 text-blue-500">
-              likes:- {likes} <FaRegHandPointRight />
+            <p className="flex items-center gap-4 text-2xl font-bold my-4 text-blue-500">
+               <FaRegThumbsUp /> {likes}
             </p>
             <p>
               <span className="text-2xl font-medium mb-4">Name of Famous recipes:</span> <span className="text-lg text-orange-600 uppercase">

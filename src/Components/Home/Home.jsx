@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Chef from "./Chef/Chef";
 import Banner from "./Banner/Banner";
 import Foods from "./Foods/Foods";
-import Comment from "./Foods/Contract/Comment";
+import Choose from "./Choose/Choose";
 
 const Home = () => {
   const chefs = useLoaderData();
@@ -27,7 +27,7 @@ const Home = () => {
               Let's know about some Arabian chefs
             </h2>
             <p className="mt-2">
-              Here we will get to know some arabian chefs. They are all famous
+              Here we will get to know some arabian chefs. <br /> They are all famous
               chefs in Arabic countries. Their food is world famous.
             </p>
           </div>
@@ -48,10 +48,16 @@ const Home = () => {
             ))}
           </div>
         </section>
-      </div>
-      <section className="mt-28 py-8 bg-[#FFD8CA] p-5">
-        <Comment></Comment>
+      <section className="my-28">
+        <h2 className="text-5xl text-center font-medium mb-10 capitalize">
+          Why Choose us?
+        </h2>
+        <p className="my-2 text-center">
+          your will choose us because your want get the best quality food from us <br /> and we trying to serving us best.
+        </p>
+        <Choose></Choose>
       </section>
+      </div>
     </div>
   );
 };
