@@ -10,7 +10,7 @@ const Footer = () => {
     <div className=" bg-slate-300 p-10">
       <div className="my-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[50px] items-center">
         <div>
-          <img className="max-w-[250px]" src={logo} alt="" />
+          <img className="  md:max-w-[20vw]" src={logo} alt="" />
         </div>
         <div>
           <h3 className="text-2xl font-bold mb-4">Website Creator Detail </h3>
