@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Router/AuthProvider";
 
@@ -18,7 +17,7 @@ const Register = () => {
     const password = form.password.value;
 
     if (password.length <= 5) {
-      setError("Password should be at least 6 characters");
+      setError("Password add at least 6 characters");
       return;
     }
 
