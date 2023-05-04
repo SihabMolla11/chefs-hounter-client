@@ -12,4 +12,4 @@
 
 ### Live Link
 
-- Hosted in Netlify -> [Job list](https://ephemeral-tapioca-f58234.netlify.app/)
+- Hosted in Netlify -> [Chefs Hunter](https://friendly-basbousa-200b85.netlify.app/)
