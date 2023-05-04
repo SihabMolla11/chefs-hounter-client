@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Router/AuthProvider";
@@ -8,6 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation()
   const from = location.state?.from?.pathname || "/";
+  const [error, setError] = useState('')
 
   const handelLogin = (event) => {
     event.preventDefault();
@@ -21,7 +22,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
     form.reset();
   };
@@ -33,7 +34,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
   };
 
@@ -43,7 +44,7 @@ const Login = () => {
         const loggedUser = result.user;
         navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => setError(error.message));
   };
 
   return (
@@ -101,6 +102,7 @@ const Login = () => {
             Please Register
           </Link>
         </p>
+        <p className="text-red-600 mt-4">{error}</p>
       </div>
     </div>
   );

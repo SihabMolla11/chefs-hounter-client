@@ -1,29 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Router/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-  const nevigate = useNavigate()
+  const nevigate = useNavigate();
+  const [error, setError] = useState("");
 
   const handelRegister = (event) => {
     event.preventDefault();
+    setError("");
     const form = event.target;
     const name = form.name.value;
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    // console.log(name, photo, email, password);
+
+    if (password.length <= 5) {
+      setError("Password should be at least 6 characters");
+      return;
+    }
+
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        nevigate("/")
+        form.reset();
+        nevigate("/");
       })
       .catch((error) => {
         console.log(error.message);
+        setError(error.message);
       });
-      form.reset()
   };
 
   return (
@@ -76,6 +84,9 @@ const Register = () => {
           </div>
           <input className="w-full my-btn" type="submit" value="Sign ing" />
         </form>
+        <div>
+          <p className="text-red-600 my-2">{error}</p>
+        </div>
         <p className="mt-6">
           If your have already an account?{" "}
           <Link className="underline text-red-800" to="/Login">
